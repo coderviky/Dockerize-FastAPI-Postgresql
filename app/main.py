@@ -6,6 +6,8 @@ from app.core.config import settings
 from core.database import engine
 from core import base
 
+from auth.routers import user, authentication
+
 
 base.Base.metadata.create_all(engine)
 
@@ -20,6 +22,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(authentication.router)
+app.include_router(user.router)
 
 
 @app.get('/')
