@@ -2,12 +2,12 @@ from typing import List, Optional
 from pydantic import BaseModel
 
 
-# class Item(BaseModel):
-#     title: str
-#     body: str
+class Item(BaseModel):
+    title: str
+    body: str
 
-#     class Config():
-#         orm_mode = True
+    class Config():
+        orm_mode = True
 
 
 class CreateUser(BaseModel):  #
@@ -19,7 +19,7 @@ class CreateUser(BaseModel):  #
 class ShowUser(BaseModel):
     name: str
     email: str
-    # items : List[Item] = []
+    items: List[Item] = []
 
     class Config():
         orm_mode = True

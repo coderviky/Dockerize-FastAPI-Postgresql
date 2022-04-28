@@ -7,6 +7,7 @@ from core.database import engine
 from core import base
 
 from auth.routers import user, authentication
+from item.routers import item
 
 
 base.Base.metadata.create_all(engine)
@@ -25,6 +26,7 @@ app.add_middleware(
 
 app.include_router(authentication.router)
 app.include_router(user.router)
+app.include_router(item.router)
 
 
 @app.get('/')

@@ -22,4 +22,4 @@ class User(Base):
     email = Column(String)
     password = Column(String)
 
-    # items = relationship('Item', back_populates="creator")
+    items = relationship('Item', back_populates="creator")
